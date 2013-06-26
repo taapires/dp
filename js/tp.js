@@ -1,6 +1,25 @@
 $(document).ready(function () {
 "use strict";
 
+function clickWork() {
+            $menuWork.addClass('menu-select');
+            $menuContact.removeClass('menu-select');
+            $menuAbout.removeClass('menu-select');
+            $mainContent.hide().fadeOut(1000).html(main).fadeIn(1000);
+            bn.fadeIn(1000);
+            setTimeout(function() {$('.span3')[0].click(function(){});}, 750);
+}
+    var $menuWork = $('#menu-work');
+    var $menuContact = $('#menu-contact');
+    var $menuAbout = $('#menu-about');
+    var $mainContent = $('#main-content');
+
+    var $row34 = $("#row3-4");
+    var $row56 = $("#row5-6");
+    var $row12 = $("#row1-2");
+
+    var bn = $("#bottom-nav");
+    var main = $('#main-content').html();
     var profile = '<div id="lateral" class="pull-left"><p>PROFILE</p></div><div id="lateral-dir" class="pull-right"><p class="bold">Name</p><p class="nbold">Daniela Pereira</p><p class="bold">Born</p><p class="nbold">July 87</p><p class="bold">Nationality</p><p class="nbold">Portuguese</p><p class="bold">Interests</p><p class="nbold">Photography . Design . Illustration . Music . Cinema</p></div><div class="bottom-nav"><br><div class="square-active square-profile"></div><div class="square-inactive square-edu"></div><div class="square-inactive square-skills"></div></div>';
     var skills = '<div id="lateral" class="pull-left"><p>SKILLS</p></div><div id="lateral-dir" class="pull-right"><p class="bold">Graphic Design</p><p class="nbold">Adobe Illustrator . Adobe Indesign</p><p class="bold">Photography</p><p class="nbold">Adobe Photoshop</p><p class="bold">Video</p><p class="nbold">Avid . Adobe After Effects</p><p class="bold">3D</p><p class="nbold">Blender</p><p class="bold">Web</p><p class="nbold">Adobe Dreamweaver . Adobe Flash</p></div><div class="bottom-nav"><br><div class="square-inactive square-profile"></div><div class="square-inactive square-edu"></div><div class="square-active square-skills"></div></div>';
     var edu = '<div id="lateral" class="pull-left"><p>EDUCATION</p></div><div id="lateral-dir" class="pull-right"><p class="bold">school of communication, arts and information technology | lusófona</p><p class="nbold">post graduate | design</p><p class="bold">higher school of communication and media studies | ipl</p><p class="nbold">graduate | audiovisual and multimedia</p><p class="bold">lxschool</p><p class="nbold">master graphic designer</p><p class="bold">iefp</p><p class="nbold">macromedia flash and actionscript 2</p></div><div class="bottom-nav"><br><div class="square-inactive square-profile"></div><div class="square-active square-edu"></div><div class="square-inactive square-skills"></div></div>';
@@ -343,9 +362,9 @@ $(document).ready(function () {
 
     var squareOne = $(".square-one");
     squareOne.click(function () {
-        $("#row3-4").hide().delay(1000).fadeOut(1000);
-        $("#row5-6").hide().delay(1000).fadeOut(1000);
-        $("#row1-2").fadeIn(1000);
+        $row34.hide().delay(1000).fadeOut(1000);
+        $row56.hide().delay(1000).fadeOut(1000);
+        $row12.fadeIn(1000);
         //squareOne.hasClass("square-inactive") ? (squareOne.removeClass("square-inactive").addClass("square-active"), squareTwo.removeClass("square-active").addClass("square-inactive"), squareThree.removeClass("square-active").addClass("square-inactive")) : squareOne.removeClass("square-active").addClass("square-inactive")
         if (squareOne.hasClass("square-inactive")) {
             squareOne.removeClass("square-inactive").addClass("square-active");
@@ -358,9 +377,9 @@ $(document).ready(function () {
 
     var squareTwo = $(".square-two");
     squareTwo.click(function () {
-        $("#row1-2").hide().delay(1000).fadeOut(1000);
-        $("#row5-6").hide().delay(1000).fadeOut(1000);
-        $("#row3-4").fadeIn(1000);
+        $row12.hide().delay(1000).fadeOut(1000);
+        $row56.hide().delay(1000).fadeOut(1000);
+        $row34.fadeIn(1000);
         //squareTwo.hasClass("square-inactive") ?
           //  (squareTwo.removeClass("square-inactive").addClass("square-active"), squareOne.removeClass("square-active").addClass("square-inactive"), squareThree.removeClass("square-active").addClass("square-inactive")) : squareTwo.removeClass("square-active").addClass("square-inactive")
         if (squareTwo.hasClass("square-inactive")) {
@@ -374,9 +393,9 @@ $(document).ready(function () {
     
     var squareThree = $(".square-three");
     squareThree.click(function () {
-        $("#row3-4").hide().delay(1000).fadeOut(1000);
-        $("#row1-2").hide().delay(1000).fadeOut(1000);
-        $("#row5-6").fadeIn(1000);
+        $row34.hide().delay(1000).fadeOut(1000);
+        $row12.hide().delay(1000).fadeOut(1000);
+        $row56.fadeIn(1000);
         //squareThree.hasClass("square-inactive") ? (squareThree.removeClass("square-inactive").addClass("square-active"), squareOne.removeClass("square-active").addClass("square-inactive"),
           //  squareTwo.removeClass("square-active").addClass("square-inactive")) : squareThree.removeClass("square-active").addClass("square-inactive")
         if (squareThree.hasClass("square-inactive")) {
@@ -389,7 +408,7 @@ $(document).ready(function () {
     });
 
     // WORK
-    var work = $("#menu-work");
+    /*var work = $("#menu-work");
     work.click(function(){
         $("body").fadeOut( 
             function(){
@@ -398,52 +417,59 @@ $(document).ready(function () {
                     $(body).fadeIn(1000);
                 }); 
             });
-    });
+    });*/
 
     // ABOUT
     var about = $("#menu-about");
     about.on('click', function(){
         about.addClass('menu-select');
-        $('#menu-work').removeClass('menu-select');
-        $('#menu-contact').removeClass('menu-select');
+        $menuWork.removeClass('menu-select');
+        $menuContact.removeClass('menu-select');
 
-        $("#row3-4").hide().delay(1000).fadeOut(1000);
-        $("#row5-6").hide().delay(1000).fadeOut(1000);
-        $("#row1-2").delay(1000).fadeOut(1000);
-        $('#main-content').hide().fadeIn();
-        $("#main-content").html(profile);
+        $row34.hide().delay(1000).fadeOut(1000);
+        $row56.hide().delay(1000).fadeOut(1000);
+        $row12.delay(1000).fadeOut(1000);
+        $mainContent.hide().fadeIn();
+        $mainContent.html(profile);
 
         // SKILLS
-        $("#main-content").on('click', '.square-skills', function(){
-            $('#main-content').hide().fadeIn();
-            $("#main-content").html(skills);
+        $mainContent.on('click', '.square-skills', function(){
+            $mainContent.hide().fadeIn(1000);
+            $mainContent.html(skills);
         });
 
         // EDUCATION
-        $("#main-content").on('click', '.square-edu', function(){
-            $('#main-content').hide().fadeIn();
-            $("#main-content").html(edu);
+        $mainContent.on('click', '.square-edu', function(){
+            $mainContent.hide().fadeIn(1000);
+            $mainContent.html(edu);
         });
 
         // PROFILE
-        $("#main-content").on('click', '.square-profile', function(){
-            $('#main-content').hide().fadeIn();
-            $("#main-content").html(profile);
+        $mainContent.on('click', '.square-profile', function(){
+            $mainContent.hide().fadeIn(1000);
+            $mainContent.html(profile);
         });
+
+        // WORK
+        $menuWork.on('click', clickWork);
+
     });
 
     // CONTACT
-    var contact = $('#menu-contact');
+    var contact = $menuContact;
     contact.on('click', function(){
         contact.addClass('menu-select');
-        $('#menu-work').removeClass('menu-select');
-        $('#menu-about').removeClass('menu-select');
+        $menuWork.removeClass('menu-select');
+        $menuAbout.removeClass('menu-select');
 
-        $("#row3-4").hide().delay(1000).fadeOut(1000);
-        $("#row5-6").hide().delay(1000).fadeOut(1000);
-        $("#row1-2").delay(1000).fadeOut(1000);
-        $('#main-content').hide().fadeIn();
-        $("#main-content").html(contactLinks);
+        $row34.hide().delay(1000).fadeOut(1000);
+        $row56.hide().delay(1000).fadeOut(1000);
+        $row12.delay(1000).fadeOut(1000);
+        $mainContent.hide().fadeIn(1000);
+        $mainContent.html(contactLinks);
+
+        // WORK
+        $menuWork.on('click', clickWork);
     });
 
     // LOGO

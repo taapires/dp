@@ -75,7 +75,7 @@ footer p {
 }
 hr {
     width: 910px;
-    margin-left: 30px;
+    margin-left: 15px;
     margin-top: 60px;
 }
 .thumbs {
@@ -196,7 +196,8 @@ hr {
 
 #lateral-dir {
     background-color: gray;
-    width: 71%;
+    margin-right: 15px;
+    width: 644px;
     height: 100%;
     background-color: rgb(241, 241, 241);
 }
@@ -216,11 +217,16 @@ hr {
 }
 
 .lateral-contacts {
-    width: 320px;
-    height: 222px;
-    margin-bottom: 7px;
-    margin-left: 7px;
+    margin-right: 15px;
+    width: 314px;
+    height: 218px;
+    margin-bottom: 15px;
     background-color: rgb(241, 241, 241);
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
 }
 
 .contact-insta {
@@ -245,4 +251,9 @@ hr {
     background-image: url('../img/linkedin.png');
     background-position: center center;
     background-repeat: no-repeat;
+}
+
+
+.lateral-contacts:hover {
+    background-color: rgb(230, 230, 230);
 }
